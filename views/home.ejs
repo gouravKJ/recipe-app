@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head><title>All Recipes</title></head>
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fafafa;
+         background: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+       
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #e0e0e0;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    ul {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      padding: 0;
+      list-style: none;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    ul li {
+      padding: 15px 20px;
+      border-bottom: 1px solid #e0e0e0;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    ul li:last-child {
+      border-bottom: none;
+    }
+    ul li a {
+      text-decoration: none;
+      color: #2980b9;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    ul li a:hover {
+      color: #1c5980;
+    }
+  
+     .lr {
+    text-decoration: none;
+    padding: 4px 8px;
+    font-weight: bolder;
+    color: #fafafa;
+  }
+
+  .auth-links {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+
+
+    .author {
+      font-size: 0.9rem;
+      color: #777;
+      font-style: italic;
+    }
+   
+  
+  </style>
+<body>
+  <h1>All Recipes</h1>
+  <ul>
+    <% recipes.forEach(recipe => { %>
+      <li>
+        <a href="/recipes/<%= recipe._id %>"><%= recipe.title %></a>
+        by <%= recipe.userId.username %>
+      </li>
+    <% }) %>
+  </ul>
+ <div class="auth-links">
+  <a class="lr" href="/login">Login</a> | 
+  <a class="lr" href="/register">Register</a>
+</div>
+
+</body>
+</html>

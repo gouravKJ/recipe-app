@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= recipe.title %> - Recipe Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1542367592-8849eb950fd8?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #2c3e50; 
+      background-color: rgba(255, 255, 255, 0.8); 
+      position: relative;
+      z-index: 1;
+    }
+
+    
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(255, 255, 255, 0.85);
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #27ae60; 
+      text-align: center;
+      max-width: 800px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: #34495e;
+    }
+
+    img {
+      margin: 20px 0;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+      color: #2c3e50;
+      border-bottom: 2px solid #27ae60;
+      padding-bottom: 6px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    a {
+      margin-top: 40px;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background-color: #27ae60;
+      padding: 12px 26px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
+    }
+
+    a:hover {
+      background-color: #219150;
+      box-shadow: 0 6px 12px rgba(33, 145, 80, 0.6);
+    }
+
+    strong {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <h1><%= recipe.title %></h1>
+  <p><strong>By:</strong> <%= recipe.userId.username %></p>
+
+  <% if (recipe.image) { %>
+    <img src="<%= recipe.image %>" alt="Image of <%= recipe.title %>">
+  <% } %>
+
+  <h3>Ingredients:</h3>
+  <p><%= recipe.ingredients %></p>
+
+  <h3>Instructions:</h3>
+  <p><%= recipe.instructions %></p>
+
+  <a href="/">Back to home</a>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><title>New Recipe</title></head>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+       background: url('https://images.unsplash.com/photo-1567337710282-00832b415979?q=80&w=1030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f4f6f8;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      opacity: 70%;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+     
+
+    
+    input[type="text"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #27ae60;
+      color: white;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #219150;
+    }
+  </style>
+
+<body>
+  <h1>Add New Recipe</h1>
+  <form action="/recipes" method="POST" enctype="multipart/form-data">
+    <input name="title" placeholder="Title" required />
+    <textarea name="ingredients" placeholder="Ingredients" required></textarea>
+    <textarea name="instructions" placeholder="Instructions" required></textarea>
+    <input type="file" name="image" />
+    <button type="submit">Add Recipe</button>
+  </form>
+</body>
+</html>
